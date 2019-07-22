@@ -1,33 +1,14 @@
- var recipes={
-   
- };
- 
- function updateObjectWithKeyAndValue(object, key, value){
-   
-   object[key]=value;
-   return object;
- }
- 
- function updateObjectWithKeyAndValue(object, key, value){
-  return Object.assign({},object,{[key]: value});
-   
- }
- 
- function destructivelyUpdateObjectWithKeyAndValue(object, key, value){
-   return Object.assign(object,{[key]:value});
-   
- }
+//Step One:Objects defines a `recipes` object:
+var recipes ={};
 
-function deleteFromObjectByKey(object, key){
-var newObject = Object.assign({},object);
-return delete newObject.key;
-
+//Step Two: Objects updateObjectWithKeyAndValue(object, key, value) returns an object with the orignal key value pairs and the new key value pair:
+function updateObjectWithKeyAndValue(object, key, value){
+  object[key]=value;
+  return object;
 }
 
-function destructivelyDeleteFromObjectByKey(object, key){
-  var newObj = Object.assign({},object);
-  delete newObj[key];
-  delete object[key];
-  return newObj;
+//Step Three:Objects updateObjectWithKeyAndValue(object, key, value) it does not modifythe original object, but rather returns a clone with the new data:
+function updateObjectWithKeyAndValue(object, key, value) {
+ return Object.assign({},object, {[key]: value});
   
 }
